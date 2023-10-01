@@ -1,12 +1,23 @@
 <mat-toolbar color="primary" class="mat-elevation-z8">
-  <span><mat-icon>assignment</mat-icon>Task Manager</span>
+  <a href="/">
+    <span>
+      <mat-icon>assignment</mat-icon>
+      Task Manager
+    </span>
+  </a>
 
   <div class="spacer"></div>
   <div>
-    <a mat-button class="navbar-item">Home</a>
-    <a mat-button class="navbar-item">List</a>
-    <a mat-button routerLink="profile" class="navbar-item">Profile</a>
+    <a mat-raised-button color="accent" class="navbar-item" routerLink="home"
+      >Home</a
+    >
     <a mat-raised-button color="accent" class="navbar-item">SignUP</a>
     <a mat-raised-button color="accent" class="navbar-item">LogIn</a>
+    <span
+      class="border border-yellow-500 px-1 py-1 rounded-full bg-yellow-500 hover:bg-black"
+      ><a routerLink="profile">
+        <mat-icon>person</mat-icon>
+      </a>
+    </span>
   </div>
 </mat-toolbar>
