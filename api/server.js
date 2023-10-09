@@ -50,9 +50,7 @@ app.post("/api/toDoApp/AddToDo", multer().none(), (request,response)=>{
         } else {
             database.collection("toDoData").insertOne({
                 task:request.body.newNotes,
-                date:request.body.todaysDate,
-                time:request.body.time
-
+                createdAt:request.body.newTime
             });
             response.json("Added Successfully");
         }

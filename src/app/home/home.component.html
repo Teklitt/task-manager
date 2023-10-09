@@ -3,8 +3,8 @@
     class="mx-auto box-border h-screen w-screen bg-light shadow-lg border rounded-2xl mt-2 max-w-2xl flex flex-col"
   >
     <p class="text-center text-8xl text-bold">Tasks</p>
-    <h1 *ngFor="let note of notes">
+    <p class="text-left pl-12 text-2xl" *ngFor="let note of notes">
       <b>{{ note.task }}</b>
-    </h1>
+    </p>
   </div>
 </section>

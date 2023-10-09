@@ -8,3 +8,7 @@ npm install multer --save
 ng add @angular/material
 #to run commands concurrently
 npm install concurrently --save-dev
+
+Errors:
+
+- Mongodb database not connecting. Solution: The setting on mongodb was that it would only connect in certain IP addresses so we changed that setting to make the IP address 0.0.0.0/0 so it can use any IP address.
