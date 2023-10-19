@@ -2,9 +2,60 @@
   <div
     class="mx-auto box-border h-screen w-screen bg-light shadow-lg border rounded-2xl mt-2 max-w-2xl flex flex-col"
   >
-    <p class="text-center text-8xl text-bold">Tasks</p>
-    <p class="text-left pl-12 text-2xl" *ngFor="let note of notes">
-      <b>{{ note.task }}</b>
-    </p>
+    <p class="text-center text-4xl font-bold p-3">Tasks</p>
+
+    <div class="p-4 flex flex-col justify-between font-semibold">
+      <form (ngSubmit)="onSubmit()" class="mb-4">
+        <div class="flex items-center mb-2">
+          <label for="task" class="text-xl mr-2">Enter new Task:</label>
+          <input
+            [(ngModel)]="task"
+            name="task"
+            type="text"
+            placeholder="Task"
+            class="px-2 py-1 rounded-lg border"
+            (ngModelChange)="logTaskValue()"
+          />
+        </div>
+        <button
+          type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded-lg text-lg"
+        >
+          Add Task
+        </button>
+      </form>
+
+      <div class="space-y-2">
+        <div
+          class="flex items-center p-2 bg-gray-100 rounded-lg"
+          *ngFor="let note of notes"
+        >
+          <input
+            type="checkbox"
+            class="mr-2"
+            [checked]="note.completed"
+            (change)="toggleTaskCompletion(note)"
+          />
+          <span class="text-xl flex-grow" [class.line-through]="note.completed">
+            {{ note.title }}
+          </span>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center p-2 bg-gray-100 rounded-lg"
+        *ngFor="let note of notes"
+      >
+        <input
+          type="checkbox"
+          class="mr-2"
+          [checked]="note.completed"
+          (change)="toggleTaskCompletion(note)"
+        />
+        <span class="text-xl flex-grow" [class.line-through]="note.completed">
+          {{ note.title }}
+        </span>
+      </div>
+    </div>
   </div>
 </section>

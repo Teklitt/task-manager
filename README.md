@@ -8,7 +8,12 @@ npm install multer --save
 ng add @angular/material
 #to run commands concurrently
 npm install concurrently --save-dev
+npm install body-parser
 
 Errors:
 
 - Mongodb database not connecting. Solution: The setting on mongodb was that it would only connect in certain IP addresses so we changed that setting to make the IP address 0.0.0.0/0 so it can use any IP address.
+
+# if mongodb doesnt connect successfully paste this in the terminal
+
+export MONGODB_URI="mongodb+srv://mebudenifemi:femiandebun@cluster0.l3tkziq.mongodb.net/?retryWrites=true&w=majority"

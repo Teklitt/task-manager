@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutComponent } from './layout/layout.component';
 import { LayoutModule } from './layout/layout.module';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
-    LayoutModule
+    LayoutModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
